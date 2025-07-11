@@ -19,6 +19,8 @@ public class GatewayRoutesConfig {
                         .uri("http://15.164.82.42:8080"))
                 .route("auth-service", r -> r.path("/auth/**")
                         .uri("http://43.201.165.118:8080"))
+                .route("transaction-feed-service", r -> r.path("/transaction-feed/**")
+                        .uri("http://3.36.18.51:8080"))
                 .build();
     }
 }
