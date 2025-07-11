@@ -25,7 +25,7 @@ jobs:
       - name: JAR 이름 통일 (app.jar로)
         run: |
           mkdir -p ./docker-output
-          cp ./build/libs/*.jar ./docker-output/app.jar
+          cp ./build/libs/*SNAPSHOT.jar ./docker-output/app.jar
 
       - name: Docker 이미지 빌드
         run: docker build -t gateway-app:latest .
