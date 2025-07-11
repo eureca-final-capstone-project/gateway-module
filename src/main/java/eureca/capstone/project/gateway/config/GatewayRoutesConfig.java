@@ -1,0 +1,18 @@
+package eureca.capstone.project.gateway.config;
+
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class GatewayRoutesConfig {
+
+    @Bean
+    public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route("orchestrator-service", r -> r.path("/orchestrator/**")
+                        .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
+                .build();
+    }
+}
