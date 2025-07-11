@@ -17,6 +17,8 @@ public class GatewayRoutesConfig {
                         .uri("http://13.124.4.121:8080"))
                 .route("alarm-service", r -> r.path("/alarm/**")
                         .uri("http://15.164.82.42:8080"))
+                .route("auth-service", r -> r.path("/auth/**")
+                        .uri("http://43.201.165.118:8080"))
                 .build();
     }
 }
