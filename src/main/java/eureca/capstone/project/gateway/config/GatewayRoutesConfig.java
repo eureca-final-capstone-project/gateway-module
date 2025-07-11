@@ -21,6 +21,8 @@ public class GatewayRoutesConfig {
                         .uri("http://43.201.165.118:8080"))
                 .route("transaction-feed-service", r -> r.path("/transaction-feed/**")
                         .uri("http://3.36.18.51:8080"))
+                .route("pay-service", r -> r.path("/pay/**")
+                        .uri("http://52.78.14.23:8080"))
                 .build();
     }
 }
