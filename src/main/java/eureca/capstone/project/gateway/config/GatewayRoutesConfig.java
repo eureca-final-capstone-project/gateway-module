@@ -13,6 +13,8 @@ public class GatewayRoutesConfig {
         return builder.routes()
                 .route("orchestrator-service", r -> r.path("/orchestrator/**")
                         .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
+                .route("user-service", r -> r.path("/user/**")
+                        .uri("http://13.124.4.121:8080"))
                 .build();
     }
 }
