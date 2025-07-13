@@ -23,6 +23,8 @@ public class GatewayRoutesConfig {
                         .uri("http://3.36.18.51:8080"))
                 .route("pay-service", r -> r.path("/pay/**")
                         .uri("http://52.78.14.23:8080"))
+                .route("statistics-service", r -> r.path("/statistics/**")
+                        .uri("http://43.200.49.85:8080"))
                 .build();
     }
 }
