@@ -28,5 +28,7 @@ public class GatewayRoutesConfig {
                 .route("admin-service", r -> r.path("/admin/**")
                         .uri("http://3.39.218.134:8080"))
                 .build();
+
+
     }
 }
