@@ -19,6 +19,14 @@ public class GatewayRoutesConfig {
                 .route("orchestrator-kakao-callback", r -> r.path("/orchestrator/login/oauth2/code/kakao")
                         .filters(f -> f.stripPrefix(1)) // "/orchestrator" 제거
                         .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
+                // 구글 로그인 시작 요청
+                .route("orchestrator-google-login", r -> r.path("/orchestrator/oauth2/authorization/google")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
+                // 구글 로그인 콜백 요청
+                .route("orchestrator-google-callback", r -> r.path("/orchestrator/login/oauth2/code/google")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
 
                 .route("orchestrator-service", r -> r.path("/orchestrator/**")
                         .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
