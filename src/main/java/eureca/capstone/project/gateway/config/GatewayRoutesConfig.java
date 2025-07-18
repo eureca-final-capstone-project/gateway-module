@@ -17,11 +17,7 @@ public class GatewayRoutesConfig {
                         .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
                 // 카카오 로그인 콜백 요청
                 .route("orchestrator-kakao-callback", r -> r.path("/orchestrator/login/oauth2/code/kakao")
-                        .filters(f -> f.stripPrefix(1) // "/orchestrator" 제거
-                                .addRequestHeader("X-Forwarded-Proto", "https")
-                                .addRequestHeader("X-Forwarded-Host", "visiblego.com")
-                                .addRequestHeader("X-Forwarded-Prefix", "/orchestrator") // baseUrl 보정용 헤더 추가
-                        ) // "/orchestrator" 제거
+                        .filters(f -> f.stripPrefix(1)) // "/orchestrator" 제거
                         .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
 
                 .route("orchestrator-service", r -> r.path("/orchestrator/**")
