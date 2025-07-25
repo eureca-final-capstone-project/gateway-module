@@ -18,7 +18,8 @@ public class WebConfig {
         config.setAllowedOriginPatterns(Arrays.asList(
                 "https://d11zul423xp1v6.cloudfront.net",
                 "https://ureca-final.com/",
-                "http://localhost:5173/"
+                "http://localhost:5173/",
+                "https://www.visiblego.com"
         ));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         config.setAllowedHeaders(Arrays.asList("*"));
