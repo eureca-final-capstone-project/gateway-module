@@ -28,6 +28,15 @@ public class GatewayRoutesConfig {
                         .filters(f -> f.stripPrefix(1))
                         .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
 
+                // 네이버 로그인 시작 요청
+                .route("orchestrator-naver-login", r -> r.path("/orchestrator/oauth2/authorization/naver")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
+                // 네이버 로그인 콜백 요청
+                .route("orchestrator-naver-callback", r -> r.path("/orchestrator/login/oauth2/code/naver")
+                        .filters(f -> f.stripPrefix(1))
+                        .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
+
                 .route("orchestrator-service", r -> r.path("/orchestrator/**")
                         .uri("http://capstone-real-alb-1484290202.ap-northeast-2.elb.amazonaws.com"))
 
